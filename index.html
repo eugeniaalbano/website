@@ -39,10 +39,10 @@
       --color-text-inverse:   #faf9f6;
 
       /* Primary accent: coral */
-      --color-primary:        #D96558;
+      --color-primary:        #CA5A55;
       --color-primary-hover:  #6f2a16;
       --color-primary-active: #952E3D;
-      --color-primary-highlight: #EFE1E1;
+      --color-primary-highlight: #F0E1E1;
 
       --shadow-sm: 0 1px 2px oklch(0.2 0.03 30 / 0.07);
       --shadow-md: 0 4px 12px oklch(0.2 0.03 30 / 0.09);
@@ -200,17 +200,55 @@
     }
     .hero h1 em { font-style: italic; color: var(--color-primary); }
     .hero-desc {
-      font-size: var(--text-lg); color: var(--color-text-muted);
+      font-size: var(--text-base); color: var(--color-text-muted);
       max-width: 52ch; margin-bottom: var(--space-10);
       line-height: 1.6; font-weight: 300;
     }
-    .hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      align-items: stretch;
+    }
+    @media (max-width: 800px) {
+      .hero-layout { grid-template-columns: 1fr; }
+    }
+    .hero-left,
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-right {
+      gap: var(--space-6);
+      padding-top: var(--space-2);
+    }
+    .hero-left .hero-actions,
+    .hero-right .hero-actions { margin-top: auto; }
+    .hero-services { list-style: none; display: flex; flex-direction: column; gap: var(--space-5); }
+    .hero-services li {
+      display: flex; gap: var(--space-4);
+      font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1;
+    }
+    .hero-services li::before {
+      content: "";
+      width: 5px; height: 5px; min-width: 5px;
+      background: var(--color-primary);
+      border-radius: 1px;
+      margin-top: 0.4em; flex-shrink: 0;
+    }
+    .hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap;}
     .hero-meta {
       margin-top: var(--space-16); padding-top: var(--space-8);
       border-top: 1px solid var(--color-divider);
-      display: flex; gap: var(--space-10); flex-wrap: wrap;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-10); flex-wrap: wrap;
     }
-    .hero-meta-item { display: flex; flex-direction: column; gap: var(--space-1); }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      align-items: center;
+      text-align: center;
+    }
     .hero-meta-item span:first-child {
       font-family: var(--font-display); font-size: var(--text-xl);
       font-weight: 500; letter-spacing: -0.02em;
@@ -426,14 +464,28 @@
     <section class="hero">
       <div class="container">
         <span class="hero-label">Operations Consulting · Berlin (remote)</span>
-        <h1>Operations designed for the organisation you're <em>becoming</em></h1>
-        <p class="hero-desc">
-          I work inside mission-driven organisations to untangle the systems
-          and processes that have outgrown their original design. Close enough to see it. Far enough to question it.
-        </p>
-        <div class="hero-actions">
-          <a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book an intro call</a>
-          <a href="#how" class="btn btn-secondary">How I work</a>
+        <div class="hero-layout">
+          <div class="hero-left">
+            <h1>Operations designed for the organisation you're <em>becoming</em></h1>
+            <div class="hero-actions">
+              <a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <p class="hero-desc">
+              I work inside mission-driven organisations to untangle the systems
+              and processes that have outgrown their original design. Close enough to see it. Far enough to question it.
+            </p>
+            <ul class="hero-services" role="list">
+              <li>Process design and review</li>
+              <li>Knowledge management</li>
+              <li>Remote team operations</li>
+              <li>Tool and system transitions</li>
+            </ul>
+            <div class="hero-actions">
+              <a href="#how" class="btn btn-secondary">How I work</a>
+            </div>
+          </div>
         </div>
         <div class="hero-meta">
           <div class="hero-meta-item">
