@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eugenia Albano — Operations Consulting</title>
+  <meta name="description" content="Operations and process consulting for high-impact organisations navigating growth. Based in Berlin.">
+  <link rel="icon" type="image/svg" href="favicon.svg">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Option 1 (active): Work Sans
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  -->
+  
+  <!-- Option 2 (active): Plus Jakarta Sans  -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+  <!-- Option 3: uncomment to try General Sans
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+  -->
+
+  <style>
+
+    :root, [data-theme="light"] {
+      /* Surfaces */
+      --color-bg:             #f7f5f1;
+      --color-surface:        #f9f7f3;
+      --color-surface-2:      #fbf9f6;
+      --color-surface-offset: #eeebe4;
+      --color-divider:        #dbd8d1;
+      --color-border:         #d2cfc7;
+
+      /* Text */
+      --color-text:           #25221b;
+      --color-text-muted:     #6a6860;
+      --color-text-faint:     #b5b3ae;
+      --color-text-inverse:   #faf9f6;
+
+      /* Primary accent: coral */
+      --color-primary:        #D96558;
+      --color-primary-hover:  #6f2a16;
+      --color-primary-active: #952E3D;
+      --color-primary-highlight: #EFE1E1;
+
+      --shadow-sm: 0 1px 2px oklch(0.2 0.03 30 / 0.07);
+      --shadow-md: 0 4px 12px oklch(0.2 0.03 30 / 0.09);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+
+      /* Body font — swap this variable name to try alternatives:
+         'Work Sans'         (Option 1, default)
+         'Plus Jakarta Sans' (Option 2)
+         'General Sans'      (Option 3) */
+      --font-display: 'Zodiak', 'Georgia', serif;
+      --font-body: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+
+      --content-narrow: 640px;
+      --content-default: 960px;
+      --content-wide: 1100px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg:             #171512;
+      --color-surface:        #1c1a17;
+      --color-surface-2:      #201d1a;
+      --color-surface-offset: #252220;
+      --color-divider:        #2a2724;
+      --color-border:         #3a3632;
+      --color-text:           #ceccca;
+      --color-text-muted:     #7d7a76;
+      --color-text-faint:     #5a5752;
+      --color-text-inverse:   #2b2824;
+      --color-primary:        #D96558;
+      --color-primary-hover:  #b55840;
+      --color-primary-active: #952E3D;
+      --color-primary-highlight: #3C181C;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.65;
+    }
+    img, svg { display: block; max-width: 100%; }
+    h1,h2,h3,h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; }
+    p, li { text-wrap: pretty; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    ul[role="list"] { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: oklch(from var(--color-primary-highlight) l c h / 0.85); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    a, button, [role="button"] {
+      transition: color var(--transition-interactive),
+                  background var(--transition-interactive),
+                  border-color var(--transition-interactive),
+                  opacity var(--transition-interactive);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding-inline: clamp(var(--space-6), 5vw, var(--space-12));
+    }
+    .container--default { max-width: var(--content-default); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: oklch(from var(--color-bg) l c h / 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding-block: var(--space-4);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: var(--space-3);
+      font-family: var(--font-display);
+      font-size: var(--text-sm); font-weight: 500;
+      letter-spacing: -0.01em; color: var(--color-text);
+    }
+    .nav-right { display: flex; align-items: center; gap: var(--space-6); }
+    .nav-links { display: flex; gap: var(--space-6); list-style: none; }
+    @media (max-width: 620px) { .nav-links { display: none; } }
+    .nav-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-text); }
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 500;
+      cursor: pointer; white-space: nowrap; border: none;
+    }
+    .btn-primary { background: var(--color-primary); color: #fff; }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary {
+      background: transparent; color: var(--color-text);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.18);
+    }
+    .btn-secondary:hover { background: var(--color-surface-offset); }
+    .theme-toggle {
+      background: none; border: none; cursor: pointer;
+      color: var(--color-text-muted); padding: var(--space-1);
+      display: flex; align-items: center;
+    }
+    .theme-toggle:hover { color: var(--color-text); }
+
+    /* HERO */
+    .hero {
+      padding-block: clamp(var(--space-20), 12vw, 9rem) clamp(var(--space-16), 10vw, 8rem);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-primary); margin-bottom: var(--space-6);
+    }
+    .hero h1 {
+      font-size: var(--text-2xl); font-weight: 400;
+      max-width: 16ch; margin-bottom: var(--space-8);
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: italic; color: var(--color-primary); }
+    .hero-desc {
+      font-size: var(--text-base); color: var(--color-text-muted);
+      max-width: 52ch; margin-bottom: var(--space-10);
+      line-height: 1.6; font-weight: 300;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .hero-layout { grid-template-columns: 1fr; }
+    }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      padding-top: var(--space-2);
+    }
+    .hero-services { list-style: none; display: flex; flex-direction: column; gap: var(--space-5); }
+    .hero-services li {
+      display: flex; gap: var(--space-4);
+      font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1;
+    }
+    .hero-services li::before {
+      content: "";
+      width: 5px; height: 5px; min-width: 5px;
+      background: var(--color-primary);
+      border-radius: 1px;
+      margin-top: 0.4em; flex-shrink: 0;
+    }
+    .hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap;}
+    .hero-meta {
+      margin-top: var(--space-16); padding-top: var(--space-8);
+      border-top: 1px solid var(--color-divider);
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-10); flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      align-items: center;
+      text-align: center;
+    }
+    .hero-meta-item span:first-child {
+      font-family: var(--font-display); font-size: var(--text-xl);
+      font-weight: 500; letter-spacing: -0.02em;
+    }
+    .hero-meta-item span:last-child {
+      font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.02em;
+    }
+
+    /* SIGNAL */
+    .signal {
+      padding-block: clamp(var(--space-16), 8vw, var(--space-24));
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .signal-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-20)); align-items: start;
+    }
+    @media (max-width: 700px) { .signal-inner { grid-template-columns: 1fr; } }
+    .signal-heading {
+      font-size: var(--text-xl); font-weight: 400;
+      letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .signal-heading em { font-style: italic; color: var(--color-primary); }
+    .signal-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-5); }
+    .signal-list li {
+      display: flex; gap: var(--space-4);
+      font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.6;
+    }
+    .signal-list li::before {
+      content: "";
+      width: 5px; height: 5px; min-width: 5px;
+      background: var(--color-primary);
+      border-radius: 1px;
+      margin-top: 0.66em; flex-shrink: 0;
+    }
+
+    /* SHARED SECTION STYLES (HOW / SERVICES / ABOUT / CONTACT) */
+    .how,
+    .services,
+    .about,
+    .contact {
+      padding-block: clamp(var(--space-16), 8vw, var(--space-24));
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .how,
+    .about {
+      background: var(--color-surface);
+    }
+    .section-label {
+      display: inline-block;
+      font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-6);
+    }
+    :is(.how, .services, .about, .contact) h2 {
+      font-size: var(--text-xl);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-6);
+    }
+
+    /* HOW I WORK */
+    .how-inner {
+      display: grid; grid-template-columns: 5fr 6fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-20)); align-items: start;
+    }
+    @media (max-width: 700px) { .how-inner { grid-template-columns: 1fr; } }
+    .how p {
+      font-size: var(--text-base); color: var(--color-text-muted);
+      margin-bottom: var(--space-5); max-width: 56ch; line-height: 1.7;
+    }
+    .how-steps { display: flex; flex-direction: column; gap: var(--space-4); }
+    .how-step {
+      padding: var(--space-6);
+      background: var(--color-surface-2);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-lg);
+    }
+    .how-step-num {
+      font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.06em;
+      color: var(--color-primary); text-transform: uppercase; margin-bottom: var(--space-2);
+    }
+    .how-step h3 {
+      font-family: var(--font-display); font-size: var(--text-base);
+      font-weight: 500; margin-bottom: var(--space-2); letter-spacing: -0.01em;
+    }
+    .how-step p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; }
+
+    /* SERVICES */
+    .services-intro { max-width: 54ch; margin-bottom: var(--space-12); }
+    .services-intro h2 { margin-bottom: var(--space-4); }
+    .services-intro p { font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-4);
+    }
+    .service-card {
+      padding: var(--space-8) var(--space-6);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.1);
+      border-radius: var(--radius-lg); background: var(--color-surface);
+    }
+    .service-card h3 {
+      font-family: var(--font-display); font-size: var(--text-lg);
+      font-weight: 500; margin-bottom: var(--space-3); letter-spacing: -0.01em;
+    }
+    .service-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+
+    /* ABOUT */
+    .about-inner {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-16)); align-items: start;
+    }
+    @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-photo {
+      aspect-ratio: 4/5; background: var(--color-surface-offset);
+      border-radius: var(--radius-lg);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: var(--space-3); color: var(--color-text-faint); min-height: 180px;
+      overflow: hidden;
+    }
+    .about-photo span { font-size: var(--text-xs); text-align: center; max-width: 18ch; line-height: 1.5; }
+    @media (max-width: 700px) { .about-photo { aspect-ratio: 4/5; max-width: 100%; } }
+    .about p {
+      font-size: var(--text-base); color: var(--color-text-muted);
+      margin-bottom: var(--space-5); max-width: 60ch; line-height: 1.7;
+    }
+    .about-detail {
+      margin-top: var(--space-8); padding-top: var(--space-6);
+      border-top: 1px solid var(--color-divider);
+      display: flex; flex-wrap: wrap; gap: var(--space-6) var(--space-10);
+    }
+    .about-detail-item { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .about-detail-item strong {
+      display: block; font-weight: 500; font-size: var(--text-sm);
+      color: var(--color-text); margin-bottom: var(--space-1);
+    }
+
+    /* CONTACT */   
+    .contact p { font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; }
+
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-20)); align-items: start;
+    }
+    @media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; } }
+    .contact-left h2 { margin-bottom: var(--space-4); }
+    .contact-left p { font-size: var(--text-base); color: var(--color-text-muted); max-width: 44ch; line-height: 1.7; margin-bottom: var(--space-8); }
+    .contact-card {
+      padding: var(--space-6);
+      border: 1px solid oklch(from var(--color-primary) l c h / 0.25);
+      border-radius: var(--radius-lg);
+      background: var(--color-primary-highlight);
+      display: flex; flex-direction: column; gap: var(--space-3);
+    }
+    .contact-card strong { font-size: var(--text-base); color: var(--color-text); }
+    .contact-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; line-height: 1.5; }
+    .contact-card-secondary {
+      margin-top: var(--space-4);
+      padding: var(--space-6);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.1);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      display: flex; flex-direction: column; gap: var(--space-3);
+    }
+    .contact-card-secondary strong { font-size: var(--text-base); color: var(--color-text); }
+    .contact-card-secondary p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; line-height: 1.5; }
+
+    /* FOOTER */
+    footer { padding-block: var(--space-8); }
+    .footer-inner {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: var(--space-4);
+    }
+    .footer-inner p { font-size: var(--text-xs); color: var(--color-text-faint); }
+    .footer-links { display: flex; gap: var(--space-6); list-style: none; }
+    .footer-links a { font-size: var(--text-xs); color: var(--color-text-faint); }
+    .footer-links a:hover { color: var(--color-text-muted); }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#top">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="27" height="27" rx="5.5" stroke="currentColor" stroke-opacity="0.2"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Zodiak" font-size="15" font-weight="400" fill="currentColor" letter-spacing="-0.5">EA</text>
+        </svg>
+        Eugenia Albano
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" role="list">
+          <li><a href="#how">How I Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container">
+        <span class="hero-label">Operations Consulting · Berlin (remote)</span>
+        <div class="hero-layout">
+          <div>
+            <h1>Operations designed for the organisation you're <em>becoming</em></h1>
+            <div class="hero-actions">
+              <a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <p class="hero-desc">
+              I work inside mission-driven organisations to untangle the systems
+              and processes that have outgrown their original design. Close enough to see it. Far enough to question it.
+            </p>
+            <ul class="hero-services" role="list">
+              <li>Process design and review</li>
+              <li>Knowledge management</li>
+              <li>Remote team operations</li>
+              <li>Tool and system transitions</li>
+            </ul>
+            <div class="hero-actions">
+              <a href="#how" class="btn btn-secondary">How I work</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span>5+ years</span>
+            <span>Managing projects and teams<br/>
+            in a distributed setup</span>
+          </div>
+          <div class="hero-meta-item">
+            <span>1,000+</span>
+            <span>Projects and tasks tracked<br/>
+            across a team of 70</span>
+          </div>
+          <div class="hero-meta-item">
+            <span>Mission focused</span>
+            <span>I work with mission-driven organisations<br/>
+            to help you grow your impact</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal" id="signal">
+      <div class="container container--default">
+        <div class="signal-inner">
+          <h2 class="signal-heading">
+            You might recognise<br>
+            <em>some</em> of these
+          </h2>
+          <ul class="signal-list" role="list">
+            <li>Your team has grown, but the processes haven't kept up. The accumulated complexity is slowing you down.</li>
+            <li>You have invested in powerful tools or systems that are not yet living up to their promise.</li>
+            <li>Documentation exists, but managers are still the bottleneck for moving work forward.</li>
+            <li>A new hire takes weeks to become productive because there's no clear path in.</li>
+            <li>Something clearly needs to change, but no one has the bandwidth to step back and figure out what.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section class="how" id="how">
+      <div class="container container--default">
+        <div class="how-inner">
+          <div>
+            <p class="section-label">How I work</p>
+            <h2>Insight through proximity.</h2>
+            <p> I provide immediate value on your urgent operational needs while building a first-hand understanding of how your systems actually function in practice.
+            That means noticing the things that only become visible from inside: the normalised workarounds, the accumulated complexity, and what's worth keeping versus what can be left behind.</p>
+            <p>The hands-on work varies by organisation: past examples include candidate screening, data work, stakeholder communication, KPI tracking, research, and event coordination.</p>
+            <p>Every engagement ends with something your team can keep using, whether that's a restructured process, clearer documentation, or a system that no longer needs a person to hold it together.
+            </p>
+          </div>
+          <div class="how-steps">
+            <div class="how-step">
+              <p class="how-step-num">Phase 1</p>
+              <h3>Jump in and contribute immediately</h3>
+              <p>I start by joining your team in doing what needs doing right now. That might mean getting into a tool or a piece of documentation, or it might mean reinforcing the hands-on day-to-day work. This is how I build the context that no briefing document could give me.
+				</p>
+            </div>
+            <div class="how-step">
+              <p class="how-step-num">Phase 2</p>
+              <h3>Diagnose from the inside</h3>
+              <p>Once I know how things actually work, I can see what's worth keeping and what isn't. Growing organisations tend to add complexity layer by layer rather than going back to first principles. I help untangle that.</p>
+            </div>
+            <div class="how-step">
+              <p class="how-step-num">Phase 3</p>
+              <h3>Leave something useful behind</h3>
+              <p>Recommendations framed as options, restructured processes, or documentation your team can actually use. Most of all, your team will feel lighter, with tools and processes supporting their work instead of getting in the way of it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container container--default">
+        <div class="services-intro">
+          <p class="section-label">What I do</p>
+          <h2>Specific problems, concrete improvements</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Process design and review</h3>
+            <p>Existing processes that have grown too complex, or new ones that need to be built from scratch. I question what's worth keeping and what should be redesigned rather than patched again.</p>
+          </div>
+          <div class="service-card">
+            <h3>Knowledge management</h3>
+            <p>Documentation that doesn't exist, isn't used, or is scattered across too many places. I build guides and reference materials that fit how people actually look for information when they need it.</p>
+          </div>
+          <div class="service-card">
+			<h3>Remote team operations</h3>
+			<p>New hires can't find what they need, the same questions come up repeatedly, and managers become the bottleneck. I put in place the communication norms and structures that let teams work without routing everything through a person.</p>
+          </div>
+          <div class="service-card">
+            <h3>Tool and system transitions</h3>
+            <p>Migrating to a new ATS, knowledge base, or project management tool. I learn the new system deeply, including its limitations and workarounds, and set it up in a way that actually fits how your team works.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container container--default">
+        <p class="section-label">About me</p>
+        <div class="about-inner">
+        <div class="about-photo" aria-label="Photo of Eugenia Albano">
+  <img
+    src="photo.jpg"
+    alt="Portrait of Eugenia, freelance operations consultant"
+    width="220"
+    height="275"
+    loading="lazy"
+    style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"
+  >
+    
+          </div>
+          <div>
+            <h2>Eugenia Albano</h2>
+            <p>
+Improving the world has been a key motivation since I was young. Noticing how people are shaped by their environments, paired with the desire to see the impact of my work first hand, led me to study geography and urban planning.
+			</p>
+            <p>
+Working with non-profits early in my career brought a question into focus: is this actually helping? Discovering Effective Altruism gave me a rigorous framework to begin answering it. I got involved in the community straight away, but figuring out where my skills could best contribute professionally took longer.
+			</p>
+            <p>
+I started where I was and spent over a decade building through doing, the last five years of which in a formal project and people management role, where I co-lead a remote team of 70 people across three locations and coordinated a portfolio of 1,000+ tasks and projects.
+			</p>
+            <p>
+That work made me realise that the satisfaction I get from fixing broken systems comes from the same place as what originally drew me to study urban planning: the desire to create environments where people can do their best.
+			</p>
+			</p>
+            <div class="about-detail">
+              <div class="about-detail-item">
+                <strong>Based in</strong>Berlin, Germany
+              </div>
+              <div class="about-detail-item">
+                <strong>Works with</strong>High-impact, mission-driven non-profits
+              </div>
+              <div class="about-detail-item">
+                <strong>Engagement length</strong>6 weeks to 6 months
+              </div>
+              <div class="about-detail-item">
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/eugenia-albano/" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary)">View profile →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="container container--default">
+        <p class="section-label">Get in touch</p>
+        <div class="contact-inner">
+          <div class="contact-left">
+            <h2>Let's see if there's a fit</h2>
+            <p>
+              If something on this page sounds like a problem you're dealing with,
+              the best next step is a short call. No preparation needed.
+            </p>
+          </div>
+          <div class="contact-card">
+            <strong>Book a 30-minute intro call</strong>
+            <p>Pick a time that works for you.</p>
+            <a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="align-self:flex-start; margin-top: var(--space-1);">Open calendar →</a>
+          </div>
+          <div style="margin-top: var(--space-10); grid-column: 1 / -1;">
+            <p style="font-size:var(--text-sm); color:var(--color-text-muted); margin-bottom:var(--space-4);">
+              Prefer to write things down before a call? Fill in the form below.
+            </p>
+            <iframe
+              src="https://airtable.com/embed/appbxeteEzZndLTSX/pag0uACWSszENJHBa/form"
+              width="100%"
+              height="520"
+              frameborder="0"
+              style="border-radius: var(--radius-lg); border: 1px solid oklch(from var(--color-text) l c h / 0.1); display:block;"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Eugenia Albano. Berlin, Germany.</p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://www.linkedin.com/in/eugenia-albano/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://cal.com/eugenia-has/30min" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      if (toggle) {
+        toggle.innerHTML = theme === 'dark' ? sun : moon;
+        toggle.addEventListener('click', () => {
+          theme = theme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', theme);
+          toggle.innerHTML = theme === 'dark' ? sun : moon;
+          toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+        });
+      }
+    })();
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
